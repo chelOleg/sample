@@ -189,30 +189,30 @@ if __name__ == '__main__':
         b_jl_fano += jack_fano[el]
         b_l_u += lolita_uni[el]
 
-    with open('jack_fano18.txt', 'r') as f:
+    with open('jack_fano18.txt', 'w') as f:
         f.write(b_jj_fano)
 
-    with open('lolita_fano18.txt', 'r') as f:
+    with open('lolita_fano18.txt', 'w') as f:
         f.write(b_ll_hafman)
 
-    with open('info.txt', 'r') as f:
-        lines = [f"Количество символов",
+    with open('info.txt', 'w') as f:
+        lines = [f"Количество символов\n",
                  f"             джек хафман:{len(b_jj_hafman)}; Шенон-Фано {len(b_jj_fano)};"
-                 f" равномерное {len(b_j_u)}; количество символов {len(jack)}",
-                 f"       Чужой джек хафман:{len(b_lj_hafman)}; Шенон-Фано {len(b_lj_fano)};",
+                 f" равномерное {len(b_j_u)}; количество символов {len(jack)}\n",
+                 f"       Чужой джек хафман:{len(b_lj_hafman)}; Шенон-Фано {len(b_lj_fano)};\n",
                  f"           лолита хафман:{len(b_ll_hafman)}; Шенон-Фано {len(b_ll_fano)}; "
-                 f"равномерное {len(b_l_u)}; количество символов {len(lolita)}",
-                 f"     Чужой лолита хафман:{len(b_jl_hafman)}; Шенон-Фано {len(b_jl_fano)};",
-                 f"Энтропия джек: {round(sum(coder1.ent),4)} Лолита: {round(sum(coder2.ent),4)}",
-                 "Средняя длинна кодового слова",
-                 f"        джек хафман:{round(len(b_jj_hafman)/len(jack),4)}; Шенон-Фано {round(len(b_jj_fano)/len(jack),4)};",
-                 f"      лолита хафман:{round(len(b_ll_hafman)/len(lolita),4)}; Шенон-Фано {round(len(b_ll_fano)/len(lolita),4)};",
-                 f"  Чужой джек хафман:{round(len(b_lj_hafman)/len(jack),4)}; Шенон-Фано {round(len(b_lj_fano)/len(jack),4)};",
-                 f"Чужой лолита хафман:{round(len(b_jl_hafman)/len(lolita),4)}; Шенон-Фано {round(len(b_jl_fano)/len(lolita),4)};",
-                 f" Вес файлов",
-                 f"         Вес джек: {getsize('/Users/olegserduk/Desktop/laba3/jack18.txt')} Байт",
-                 f"       Вес лолита: {getsize('/Users/olegserduk/Desktop/laba3/lolita18.txt')} Байт",
-                 f"  Вес джек хафман: {math.ceil(len(b_jj_fano)/8)}  Байт",
-                 f"Вес лолита хафман: {math.ceil(len(b_ll_fano)/8)}  Байт"
+                 f"равномерное {len(b_l_u)}; количество символов {len(lolita)}\n",
+                 f"     Чужой лолита хафман:{len(b_jl_hafman)}; Шенон-Фано {len(b_jl_fano)};\n",
+                 f"Энтропия джек: {round(sum(coder1.ent),4)} Лолита: {round(sum(coder2.ent),4)}\n",
+                 "Средняя длинна кодового слова\n",
+                 f"        джек хафман:{round(len(b_jj_hafman)/len(jack),4)}; Шенон-Фано {round(len(b_jj_fano)/len(jack),4)};\n",
+                 f"      лолита хафман:{round(len(b_ll_hafman)/len(lolita),4)}; Шенон-Фано {round(len(b_ll_fano)/len(lolita),4)};\n",
+                 f"  Чужой джек хафман:{round(len(b_lj_hafman)/len(jack),4)}; Шенон-Фано {round(len(b_lj_fano)/len(jack),4)};\n",
+                 f"Чужой лолита хафман:{round(len(b_jl_hafman)/len(lolita),4)}; Шенон-Фано {round(len(b_jl_fano)/len(lolita),4)};\n",
+                 f" Вес файлов\n",
+                 f"         Вес джек: {getsize('jack18.txt')} Байт\n",
+                 f"       Вес лолита: {getsize('lolita18.txt')} Байт\n",
+                 f"  Вес джек хафман: {math.ceil(len(b_jj_fano)/8)}  Байт\n",
+                 f"Вес лолита хафман: {math.ceil(len(b_ll_fano)/8)}  Байт\n"
                  ]
         f.writelines(lines)
